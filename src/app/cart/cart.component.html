@@ -1,0 +1,26 @@
+<h2>Shopping Cart</h2>
+<div *ngIf="cartItems.length===0">
+ <p>No hay productos en el carrito</p>
+</div>
+<div *ngIf="cartItems.length > 0">
+    <table class="table table-striped">
+        <thead>
+            <th>Cod</th>
+            <th>Name</th>
+            <th>Quantity</th>
+            <th>Unit Price</th>
+            <th>Actions</th>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of cartItems">
+                <td>{{item.cod}}</td>
+                <td>{{item.name}}</td>
+                <td>{{item.quantity}}</td>
+                <td>{{item.price}}</td>
+                <td>
+                    <button (click)="removeFromCart(item)" class="btn btn-primary">Eliminar</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

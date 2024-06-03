@@ -1,0 +1,8 @@
+<h2>Product List</h2>
+<ul>
+    <li class="mt-2" *ngFor="let product of products">
+        {{product.name}} - ${{product.price}}
+        <button class="btn btn-primary" (click)="addToCart(product)">Add to cart</button>
+
+    </li>
+</ul>
